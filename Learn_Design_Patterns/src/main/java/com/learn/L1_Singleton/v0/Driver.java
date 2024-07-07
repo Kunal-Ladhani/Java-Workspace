@@ -1,4 +1,4 @@
-package com.learn.Singleton.v1;
+package com.learn.L1_Singleton.v0;
 
 public class Driver {
 	public static void main(String[] args) {
@@ -10,6 +10,6 @@ public class Driver {
 
 		System.out.println(firstInstance);
 		System.out.println(secondInstance);	// both will point to same location in heap memory indication both are referenceing same memory location
-		
+
 	}
 }

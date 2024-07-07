@@ -1,4 +1,4 @@
-package com.learn.Prototype.v0;
+package com.learn.L3_Prototype.v0;
 
 public class IntelligentStudent extends Student {
 	int iq;

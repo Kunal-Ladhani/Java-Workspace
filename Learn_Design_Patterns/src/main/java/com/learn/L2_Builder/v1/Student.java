@@ -1,6 +1,6 @@
-package com.learn.Builder.v0;
+package com.learn.L2_Builder.v1;
 
-// this is v0 of the builder design pattern
+// this is v1 of the builder design pattern
 public class Student {
     int studentId;
     String name;
@@ -19,9 +19,9 @@ public class Student {
 
     public Student(Builder builder) {
         // validation starts ....
-        if(builder.getAge() > 25) {
-            throw new IllegalArgumentException();
-        }
+//        if(builder.getAge() > 25) {
+//            throw new IllegalArgumentException();
+//        }
         // validation ends .....
         this.studentId = builder.getStudentId();
         this.name = builder.getName();
@@ -30,6 +30,14 @@ public class Student {
         this.age = builder.getAge();
         this.gradYear = builder.getGradYear();
         this.universityName = builder.getUniversityName();
+    }
+
+    // this breaks Single Resp Principle
+    // getter method for builder class object
+    // static is used because we don't want to associate it to an object,
+    // we want to associate it to Student class, so we can directly create builder with class name only.
+    public static Builder getBuilder() {
+        return new Builder();
     }
 
     @Override

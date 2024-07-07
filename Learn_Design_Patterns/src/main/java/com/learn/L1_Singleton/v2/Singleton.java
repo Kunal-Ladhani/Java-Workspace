@@ -1,4 +1,4 @@
-package com.learn.Singleton.v1;
+package com.learn.L1_Singleton.v2;
 
 public class Singleton {
 	private static Singleton instance;

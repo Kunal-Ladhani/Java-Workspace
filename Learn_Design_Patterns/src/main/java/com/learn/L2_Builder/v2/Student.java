@@ -1,4 +1,4 @@
-package com.learn.Builder.v2;
+package com.learn.L2_Builder.v2;
 
 // this is v2 of the builder design pattern
 public class Student {

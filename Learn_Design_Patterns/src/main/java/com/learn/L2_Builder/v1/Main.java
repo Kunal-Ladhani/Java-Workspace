@@ -1,4 +1,4 @@
-package com.learn.Builder.v1;
+package com.learn.L2_Builder.v1;
 
 public class Main {
     public static void main(String[] args) {
