@@ -1,4 +1,4 @@
-package com.learn.NIO;
+package com.learn.nio;
 
 import java.nio.charset.StandardCharsets;
 import java.io.*;

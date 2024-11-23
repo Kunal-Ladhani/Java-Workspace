@@ -1,4 +1,4 @@
-package com.learn.NIO;
+package com.learn.nio;
 
 import java.io.IOException;
 import java.nio.file.*;

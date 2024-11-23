@@ -42,19 +42,19 @@ public class Driver {
 		x3.fun3();
 		x3.fun4();
 
-		// 	you have to hold the value of a function in a reference of same as return type
-		//	mentioned in function signature or bigger type,
-		//	no matter if it returns a smaller type or anything.
-		// it is responsibility of caller
+		// 	you have to hold the value of a function in a reference of type same as the return type of func
+		//	type mentioned in function signature or bigger type.
+		//	does not matter if the function is actually returning a smaller type or anything.
+		// this is the responsibility of function caller.
 
-		// author should return object of same type as return type
-		// or smaller type -> child class object
-		// it is author's responsibility
+		// author should return object of same type as return type.
+		// or smaller type -> child class object.
+		// this is function author's responsibility.
 
 		// same as interface or Object variable.
 
-		// if any method is returning an object then always before doing anything check for null
-		// can give NullPointerException
+		// if any method is returning an object then always before doing anything, check for null.
+		// or it can give NullPointerException.
 
 	}
 
