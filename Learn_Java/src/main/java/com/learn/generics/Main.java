@@ -1,7 +1,12 @@
 package com.learn.generics;
 
 import com.learn.generics.badCode.MyList;
+import com.learn.generics.goodCode.MyGenericClass;
 import com.learn.generics.goodCode.MyGenericList;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Main {
 
@@ -13,7 +18,7 @@ public class Main {
 		list.add(s);
 
 		int i = (int) list.get(0);
-		String name = (String)list.get(1);
+		String name = (String) list.get(1);
 		Student kamal = (Student) list.get(2);
 		// how will the caller know what type it is returning
 		// caller cannot determine it at compile time
@@ -25,7 +30,5 @@ public class Main {
 		students.add(s);
 		// students.add("kunal");	will throw error at compile time
 		// compile time type safety
-
 	}
-
 }
