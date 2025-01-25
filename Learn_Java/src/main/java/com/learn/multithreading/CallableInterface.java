@@ -1,20 +1,24 @@
 package com.learn.multithreading;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class CallableInterface {
+
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
-		myCallable[] jobs = {
-				new myCallable(10),
-				new myCallable(20),
-				new myCallable(30),
-				new myCallable(40),
-				new myCallable(50)
+		MyCallable[] jobs = {
+				new MyCallable(10),
+				new MyCallable(20),
+				new MyCallable(30),
+				new MyCallable(40),
+				new MyCallable(50)
 		};
 
 		ExecutorService executorService = Executors.newFixedThreadPool(2);
 
-		for (myCallable myCallable : jobs) {
+		for (MyCallable myCallable : jobs) {
 			Future future = executorService.submit(myCallable);
 			// you may or may not want to store the submit() method return value in Future object
 			// future is a calculation in progress
@@ -24,25 +28,6 @@ public class CallableInterface {
 		}
 		executorService.shutdown();
 	}
-}
-
-class myCallable implements Callable {
-
-	int num;
-
-	public myCallable(int num) {
-		this.num = num;
-	}
-
-	@Override
-	public Object call() throws Exception {
-		System.out.println(Thread.currentThread().getName() + " is calculating sum from 1 to " + num);
-		int sum = 0;
-		for (int i = 1; i <= num; i++) {
-			sum += i;
-		}
-		return sum;
-		// Object is super class of all classes so it can return a child class object -> Integer
-	}
 
 }
+

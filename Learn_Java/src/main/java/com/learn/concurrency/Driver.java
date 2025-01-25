@@ -3,15 +3,8 @@ package com.learn.concurrency;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-class HelloWorldPrinter extends Thread {
-	@Override
-	public void run() {
-		System.out.println("Hello World");
-		super.run();
-	}
-}
-
 public class Driver {
+
 	public static void main(String[] args) {
 		
 //		Thread thread = new HelloWorldPrinter();
