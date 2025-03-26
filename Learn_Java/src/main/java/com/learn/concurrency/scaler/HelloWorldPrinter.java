@@ -3,7 +3,11 @@ package com.learn.concurrency.scaler;
 public class HelloWorldPrinter implements Runnable {
 
 	private void doSomething() {
-		System.out.println("Doing something! from: " + Thread.currentThread().getName());
+		System.out.println("Starting something! from: " + Thread.currentThread().getName());
+		for (int i = 1; i< 100000; i++) {
+			System.out.print("waiting\n");
+		}
+		System.out.println("Ending something! from: " + Thread.currentThread().getName());
 	}
 
 	@Override
