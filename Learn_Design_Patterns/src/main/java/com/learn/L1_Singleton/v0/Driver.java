@@ -9,7 +9,8 @@ public class Driver {
 		Singleton secondInstance = Singleton.getInstance();
 
 		System.out.println(firstInstance);
-		System.out.println(secondInstance);	// both will point to same location in heap memory indication both are referenceing same memory location
+		System.out.println(secondInstance);
+		// both will point to same location in heap memory indication both are referenceing same memory location
 
 	}
 }
