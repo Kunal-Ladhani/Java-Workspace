@@ -10,7 +10,11 @@ public class Task4 implements Runnable {
 			System.out.println(Thread.currentThread().getName() + " inside 1st sync method!");
 			try {
 				System.out.println(Thread.currentThread().getName() + " is sleeping!");
-				Thread.sleep(5000l);
+				Thread.sleep(5000);
+				notify();
+				Thread.currentThread().notify();
+				wait();
+				wait(1000);
 			} catch (InterruptedException e) {
 				System.out.println("Thread interrupted!");
 			}

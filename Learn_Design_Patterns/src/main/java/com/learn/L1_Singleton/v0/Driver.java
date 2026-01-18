@@ -1,6 +1,7 @@
 package com.learn.L1_Singleton.v0;
 
 public class Driver {
+
 	public static void main(String[] args) {
 //		Singleton firstInstance = new Singleton();
 		// see, this will give error
