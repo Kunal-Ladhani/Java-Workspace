@@ -1,6 +1,6 @@
-package com.learn.multithreading;
+package com.learn.multithreading.thread_lifecycle;
 
-public class ThreadLifeCycle {
+public class Driver {
 
 	public static void main(String[] args) {
 
@@ -57,4 +57,5 @@ public class ThreadLifeCycle {
 		// USING sleep(); with try catch block
 
 	}
+
 }

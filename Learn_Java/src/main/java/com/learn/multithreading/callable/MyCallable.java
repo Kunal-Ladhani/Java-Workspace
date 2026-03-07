@@ -1,8 +1,8 @@
-package com.learn.multithreading;
+package com.learn.multithreading.callable;
 
 import java.util.concurrent.Callable;
 
-public class MyCallable implements Callable {
+public class MyCallable implements Callable<Object> {
 
 	int num;
 

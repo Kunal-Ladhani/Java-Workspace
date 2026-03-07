@@ -1,11 +1,11 @@
-package com.learn.multithreading;
+package com.learn.multithreading.callable;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class CallableInterface {
+public class Driver {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		MyCallable[] jobs = {
@@ -19,7 +19,7 @@ public class CallableInterface {
 		ExecutorService executorService = Executors.newFixedThreadPool(2);
 
 		for (MyCallable myCallable : jobs) {
-			Future future = executorService.submit(myCallable);
+			Future<Object> future = executorService.submit(myCallable);
 			// you may or may not want to store the submit() method return value in Future object
 			// future is a calculation in progress
 			// then you can print it

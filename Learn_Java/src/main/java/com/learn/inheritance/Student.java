@@ -1,15 +1,18 @@
 package com.learn.inheritance;
 
 public class Student implements Cloneable {
+
 	private int roll;
 	private String name;
 	private int marks;
 	private Address address;
+
 	private final int schoolID;
-	private final static String SCHOOL; // static blank final variable
 	private final String subject;	// blank final field
-	// 	A final variable that is not initialized at the time of declaration is known as blank 		final variable.
-	
+	// 	A final variable that is not initialized at the time of declaration is known as blank final variable.
+
+	private final static String SCHOOL; // static blank final variable
+
 	static {
 		SCHOOL = "ST JOSEPH";
 	}	// SCHOOL is a final static so CONSTANT
@@ -18,11 +21,14 @@ public class Student implements Cloneable {
 	{
 		subject = "MATHS";
 	}	// Instance initialization block
-	// a final variable can be initialized at the time of declaration or inside a 		initialization block or inside all the constructors
+
+	// a final variable can be initialized at the time of declaration
+	// or, inside a initialization block
+	// or, inside ALL the constructors.
 	
 	// parameters can also be final, but they should never change.
 	
-	// {	subject = "SCIENCE";	}
+	// {  subject = "SCIENCE";	}
 	// reassigning a final variable is not allowed
 	
 	// constructor can never be final as they are never inherited
@@ -35,12 +41,15 @@ public class Student implements Cloneable {
 	}	// copy constructor
 	
 	/*
-	 	the copy constructor is a constructor which creates an object by initializing it with an object of the same class, which has been created previously. Java does support for copy constructors but you need to 		define them yourself.
+	 	the copy constructor is a constructor which creates an object
+	 	by initializing it with an object of the same class,
+	 	which has been created previously.
+
+	 	Java does support for copy constructors, but you need to define them yourself.
 	 */
 	
 	public Student() {
 		this.schoolID = 1001;
-		
 	} // Java bean class should always have a 0 argument constructor
 	
 	public Student(int roll, String name, int marks) {

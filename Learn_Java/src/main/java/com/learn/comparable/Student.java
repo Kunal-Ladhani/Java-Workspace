@@ -1,4 +1,4 @@
-package com.learn.collection;
+package com.learn.comparable;
 
 import java.util.Iterator;
 import java.util.Objects;

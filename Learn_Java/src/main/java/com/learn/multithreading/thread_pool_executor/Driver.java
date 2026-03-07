@@ -1,9 +1,10 @@
-package com.learn.multithreading;
+package com.learn.multithreading.thread_pool_executor;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ThreadPoolExecutor {
+public class Driver {
+
 	public static void main(String[] args) {
 		PrintJob[] jobs = {
 				new PrintJob("Lecture"),
@@ -26,29 +27,7 @@ public class ThreadPoolExecutor {
 		// we cannot decide it will handle that
 
 		executorService.shutdown();
-		// will shutDown the executor Service
-
-
-	}
-}
-
-class PrintJob implements Runnable {
-
-	String name;
-
-	public PrintJob(String name) {
-		this.name = name;
-	}
-
-	@Override
-	public void run() {
-		System.out.println(name + " job is STARTED by the thread => " + Thread.currentThread().getName());
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e) {
-			System.out.println(e.getMessage());
-		}
-		System.out.println(name + " job is COMPLETED by the thread => " + Thread.currentThread().getName());
+		// will shut down the executor Service
 	}
 
 }

@@ -64,8 +64,6 @@ public class Learn_Array {
         System.out.println(idx);
         // binary search will work only in sorted collections, if not you need to sort first
 
-        //
-
         List<Integer> list = Arrays.asList(20, 10, 40, 39, 1);
 
         int x = Collections.frequency(list, 5);

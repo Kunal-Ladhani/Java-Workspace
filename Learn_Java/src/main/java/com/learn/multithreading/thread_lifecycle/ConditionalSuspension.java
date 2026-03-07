@@ -1,28 +1,14 @@
-package com.learn.multithreading;
+package com.learn.multithreading.thread_lifecycle;
 
-// join
 
-// sum thread -> calculate the sum
-class Sum implements Runnable {
-	int sum;
+public class ConditionalSuspension {
 
-	@Override
-	public void run() {
-		Thread.currentThread().setName("Sum");
-		System.out.println(Thread.currentThread().getName() + " Thread Starts...");
-		for (int i = 0; i < 10; i++) {
-			sum += (i + 1);
-		}
-		System.out.println(Thread.currentThread().getName() + " Thread Ends...");
-
-	}
-}
-
-public class ConditionalSuspention {
 	// main thread -> print the sum
 	public static void main(String[] args) throws InterruptedException {
 		System.out.println(Thread.currentThread().getName() + " thread starts...");
+
 		Sum sumObj = new Sum();
+
 		Thread sumThread = new Thread(sumObj);
 		sumThread.start(); // Calculates the sum
 

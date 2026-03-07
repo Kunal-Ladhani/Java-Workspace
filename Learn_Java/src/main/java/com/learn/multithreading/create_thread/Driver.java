@@ -1,6 +1,7 @@
-package com.learn.multithreading;
+package com.learn.multithreading.create_thread;
 
-public class CreateThread {
+public class Driver {
+
 	public static void main(String[] args) {
 		// 1st way
 		// EXTENDING THE THREAD CLASS
@@ -13,7 +14,7 @@ public class CreateThread {
 
 		// we cannot create a object of an interface
 
-		// 3 ways - 
+		// 3 ways -
 		// implement runnable -> see MyRunnable class below
 		Thread secondThreadObject = new Thread(new myRunnable());
 		secondThreadObject.start();
@@ -50,22 +51,10 @@ public class CreateThread {
 		// race condition will be there and leads to data inconsistency
 
 		// use synchronized keyword with methods, that leads to Thread safety in java
-		//  
+
 	}
 }
 
-class myThread extends Thread {
 
-	@Override
-	public void run() {
-		System.out.println("hello from my First Thread");
-		//super.run();
-	}
-}
 
-class myRunnable implements Runnable {
-	@Override
-	public void run() {
-		System.out.println("hello from my Second Thread");
-	}
-}
+

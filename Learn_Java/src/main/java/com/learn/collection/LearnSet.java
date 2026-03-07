@@ -1,5 +1,6 @@
 package com.learn.collection;
 
+import com.learn.comparable.Student;
 import com.learn.comparator.StudentRollComp;
 
 import java.util.ArrayList;
@@ -71,10 +72,10 @@ public class LearnSet {
 		
 		System.out.println(al2);
 		
-		// you can convert any collection class to other coll class by simply passing object to constructor of coll class
+		// you can convert any collection class to other coll class by simply passing object to constructor of call class
 		
 		// if you use String then those many objects will be created after every iteration
-		// use StringBulder instead along with append method
+		// use StringBuilder instead along with append method
 		// only one object will be created
 		// .toString() will convert any object to String
 		
@@ -99,26 +100,25 @@ public class LearnSet {
 		
 		// whenever you are overriding equals() then you also override hashCode() 
 		// so that for logically equal object it returns same hashCode
-		
-		
+
 		System.out.println(s1.hashCode());
 		System.out.println(s2.hashCode());
 		
 		// hashCode is int
 		// even though both student are logically equal
 		// hashCode are different
-		// so they re stored separately in HashSet
+		// so they are stored separately in HashSet
 		
 		// roll is unique for each student 
-		// it is like primary key - col using which you can identify row uniquely
+		// it is like primary key column using which you can identify row uniquely
 		
 		// hashcode should return same int val each time for that object
-		// add() interanlly calls hashCode and equals
+		// add() internally calls hashCode and equals
 		
 		// contract of hashCode() and equals() in HashSet internally 
 		// 1st equals() called if it returns -> true
 		// 2nd it calls hashCode() if it returns -> same val
-		// then only HashSet considers them logically dupicalte
+		// then only HashSet considers them logically duplicate
 		// even though they are physically unique
 		
 		// if you do not have a unique field
@@ -137,16 +137,16 @@ public class LearnSet {
 		ts.add(40);
 		
 		//ts.add(null);
-		// TreeSet is only collection where null is not allowed
+		// TreeSet is only collection where null is NOT ALLOWED.
 		
 		System.out.println(ts);
 		// NullPtrException
 		
-		// is you are using a class in treeset
+		// is you are using a class in TreeSet
 		// it should implement Comparable Interface otw, ClassCastException
 		// element must be comparable
 		// all wrapper classes internally implement Comparable
-		// you wont be able to add a single object
+		// you won't be able to add a single object
 		
 		// Comparable belongs to java.lang package
 		
@@ -160,22 +160,24 @@ public class LearnSet {
 		studT.forEach(student -> System.out.println(student));
 		
 		System.out.println("===========================================");
+
+		/*
+			- to identify duplicate elements HashSet/LinkedHashSet uses hashCode and equals() methods
+			- TreeSet uses compareTo() method if it returns 0.
 		
-		// to identify duplicate elements HashSet/LinkedHashSet uses hashCode and equals() methods
-		// TreeSet uses compareTo() method if it returns 0.
+		 	- even if you override these methods it does not take that route it uses different method
+			- add() of TreeSet uses compareTo() method
 		
-		// even if you override theses methods it does not take that route it uses different method
-		// add() of TreeSet uses compareTo() method
-		
-		// if you want to define the sorting algorithm in the same class use Comparable interface
-		// if you are not allowed to touch the class then use comparator, it also has a method
-		// comparator belongs to java.util package
-		// using this you can define the sorting logic outside the class
-		// compare() method here is abstract
-		// you can define the method outside our bean class
-		// no need to pollute it, define it outside your class
-		
-		// just create a comparator object and pass it to TreeSet constructor	
+			- if you want to define the sorting algorithm in the same class use Comparable interface
+			- if you are not allowed to touch the class then use comparator, it also has a method
+			- comparator belongs to java.util package
+			- using this you can define the sorting logic outside the class
+			- compare() method here is abstract
+			- you can define the method outside our bean class
+			- no need to pollute it, define it outside your class
+		*/
+
+		// just create a comparator object and pass it to TreeSet constructor
 		StudentRollComp comp = new StudentRollComp();
 		TreeSet<Student> studSet = new TreeSet<>(comp);
 		
