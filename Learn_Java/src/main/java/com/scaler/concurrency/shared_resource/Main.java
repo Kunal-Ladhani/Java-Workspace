@@ -8,6 +8,7 @@ public class Main {
 
 		SharedResource sharedResource = new SharedResource();
 
+		// producer thread
 		Thread producerThread = new Thread(new ProducerTask(sharedResource));
 		producerThread.setName("Producer-Thread");
 

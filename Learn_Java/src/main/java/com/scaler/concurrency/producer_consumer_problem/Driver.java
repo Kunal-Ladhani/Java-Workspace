@@ -1,37 +1,38 @@
 package com.scaler.concurrency.producer_consumer_problem;
 
-import java.util.UUID;
-
 public class Driver {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		SharedBuffer<String> sharedBuffer = new SharedBuffer<>(3);
+        int bufferCapacity = 3;
+        int items = 7;
 
-		// producer thread
-		Thread producerThread = new Thread(() -> {
-			for (int i = 0; i < 10; ++i) {
-				sharedBuffer.produce("item-"+UUID.randomUUID().toString().substring(1,6));
-			}
-		}, "producer-thread");
+//		SharedBuffer<String> buffer = new SharedBuffer<>(bufferCapacity);
+        SharedQueue<String> buffer = new SharedQueue<>(bufferCapacity);
 
-		// consumer thread
-		Thread consumerThread = new Thread(() -> {
-			for (int i = 0; i < 10; ++i) {
-				sharedBuffer.consume();
-			}
+        // producer thread
+        Thread producerThread = new Thread(() -> {
+            for (int i = 1; i <= items; ++i) {
+                buffer.produce("item-" + i);
+            }
+        }, "producer-thread");
 
-		}, "consumer-thread");
+        // consumer thread
+        Thread consumerThread = new Thread(() -> {
+            for (int i = 1; i <= items; ++i) {
+                buffer.consume();
+            }
+        }, "consumer-thread");
 
-		producerThread.start();
+        producerThread.start();
 
-		try {
-			// producer will produce first 3 (max cap) and then it will wait for consumer (we gave timeout of 5s here)
-			Thread.sleep(5000l);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+        try {
+            // producer will produce first 3 (max cap) and then it will wait for consumer (we gave timeout of 5s here)
+            Thread.sleep(5000L);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
-		consumerThread.start();
-	}
+        consumerThread.start();
+    }
 }
