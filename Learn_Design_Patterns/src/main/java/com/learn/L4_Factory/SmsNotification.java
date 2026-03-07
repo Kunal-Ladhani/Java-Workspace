@@ -1,10 +1,10 @@
-package com.learn.L4_Factory.v0;
+package com.learn.L4_Factory;
 
 public class SmsNotification implements Notification {
 
 	@Override
-	public void sendNotification() {
-		System.out.println("Sent SMS!");
+	public void sendNotification(String message) {
+		System.out.println("Sent SMS Notification " + message);
 	}
 
 }

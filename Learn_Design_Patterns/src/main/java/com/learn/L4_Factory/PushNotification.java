@@ -1,9 +1,9 @@
-package com.learn.L4_Factory.v0;
+package com.learn.L4_Factory;
 
 public class PushNotification implements Notification {
 
 	@Override
-	public void sendNotification() {
-		System.out.println("Sent Push Notification!");
+	public void sendNotification(String message) {
+		System.out.println("Sent Push Notification " + message);
 	}
 }

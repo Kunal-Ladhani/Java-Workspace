@@ -1,7 +1,7 @@
-package com.learn.L4_Factory.v0;
+package com.learn.L4_Factory;
 
 public interface Notification {
 
-	void sendNotification();
+	void sendNotification(String message);
 
 }

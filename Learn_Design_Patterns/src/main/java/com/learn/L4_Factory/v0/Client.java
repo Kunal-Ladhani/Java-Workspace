@@ -1,8 +1,10 @@
 package com.learn.L4_Factory.v0;
 
+import com.learn.L4_Factory.*;
+
 import java.util.Scanner;
 
-public class Driver {
+public class Client {
 
 	/*
 
@@ -36,7 +38,7 @@ public class Driver {
 			throw new IllegalArgumentException("Invalid Input");
 		}
 
-		notification.sendNotification();
+		notification.sendNotification("Hello Kitty!");
 
 		/*
 

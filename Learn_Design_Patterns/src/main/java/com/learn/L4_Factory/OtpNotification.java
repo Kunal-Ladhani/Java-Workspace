@@ -1,9 +1,9 @@
-package com.learn.L4_Factory.v0;
+package com.learn.L4_Factory;
 
 public class OtpNotification implements Notification {
 
 	@Override
-	public void sendNotification() {
-		System.out.println("Sent OTP notification!");
+	public void sendNotification(String message) {
+		System.out.println("Sent OTP Notification " + message);
 	}
 }

@@ -14,5 +14,7 @@ public class Driver {
 		System.out.println("removed element at 0 = " + names.remove(0));
 		System.out.println("element at 0 = " + names.get(0));
 		System.out.println("element at 23 = " + names.get(23));
+
+		throw new RuntimeException("test");
 	}
 }
