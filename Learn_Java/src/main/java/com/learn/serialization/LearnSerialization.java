@@ -53,9 +53,10 @@ public class LearnSerialization {
 
 class A implements Serializable {
 	int i = 10;
-	
+	String email ="kunal.ladhani@gmail.com";
+
 	// transient -> don't serialize this
-	transient String email ="kunal.ladhani@gmail.com";
+	transient String password = "password";
 	// transient string -> null
 	// transient int -> 0
 	// transient boolean -> false

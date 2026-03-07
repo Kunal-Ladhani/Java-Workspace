@@ -1,43 +1,37 @@
 package com.learn.collection;
 
-
 import java.util.Iterator;
 import java.util.Objects;
 import java.util.Spliterator;
 import java.util.function.Consumer;
-
-class StudentIterator implements Iterator<Student> {
-
-	@Override
-	public boolean hasNext() {
-		return false;
-	}
-
-	@Override
-	public Student next() {
-		return null;
-	}
-
-	@Override
-	public void remove() {
-		Iterator.super.remove();
-	}
-
-	@Override
-	public void forEachRemaining(Consumer<? super Student> action) {
-		Iterator.super.forEachRemaining(action);
-	}
-}
 
 public class Student implements Comparable<Student>, Iterable<Student> {
 
 	private int roll;
 	private String name;
 
+	// --------------- NO ARGS (DEFAULT) CONSTRUCTOR -------------------
+
+	public Student() {
+		this.name = null;
+		this.roll = 0;
+	}
+
+	// --------------- ALL ARGS (PARAMETRISED) CONSTRUCTOR -------------------
+
 	public Student(int roll, String name) {
 		this.name = name;
 		this.roll = roll;
 	}
+
+	// --------------- COPY CONSTRUCTOR -------------------
+
+	public Student(Student copy) {
+		this.name = copy.name;
+		this.roll = copy.roll;
+	}
+
+	// --------------- GETTER and SETTER -------------------
 
 	public int getRoll() {
 		return roll;
@@ -54,6 +48,8 @@ public class Student implements Comparable<Student>, Iterable<Student> {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	// ------------- toString method ----------------------
 
 	@Override
 	public String toString() {
@@ -86,13 +82,15 @@ public class Student implements Comparable<Student>, Iterable<Student> {
 //
 //		return (s1.getRoll() == s2.getRoll()) && (s1.getName().equals(s2.getName()));
 //	}
-//
+
+
 //	@Override
 //	public int hashCode() {
 //		return roll;
 //	}
 
 	// define the sorting technique for multiple Student objects
+
 //	@Override
 //	public int compareTo(Object obj) {
 //		Student s1 = this;

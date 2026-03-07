@@ -1,4 +1,6 @@
-package com.learn.collection;
+package com.learn.comparator;
+
+import com.learn.collection.Student;
 
 import java.util.Comparator;
 
