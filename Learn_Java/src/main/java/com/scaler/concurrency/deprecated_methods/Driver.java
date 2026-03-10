@@ -35,6 +35,15 @@ public class Driver {
             // log the exp
         }
 
+        // THIS IS NEEDED OTW T2 (jack) will keep waiting for T1(oggy) to finish its work (but it never does release the lock)
+        // means jack can never enter oggy's house of sorts XD
+        try {
+            Thread.sleep(2000L);
+            t1.resume();
+        } catch (Exception e) {
+            // log the exp
+        }
+
         System.out.println(Thread.currentThread().getName() + " has ENDED");
     }
 
