@@ -8,6 +8,7 @@ public class Task4 implements Runnable {
 		// synchronized block acquiring lock on this object
 		synchronized (this) {
 			System.out.println(Thread.currentThread().getName() + " inside 1st sync method!");
+
 			try {
 				System.out.println(Thread.currentThread().getName() + " is sleeping!");
 				Thread.sleep(5000);
